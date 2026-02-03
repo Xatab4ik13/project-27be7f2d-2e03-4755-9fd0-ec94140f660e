@@ -1,7 +1,8 @@
 import { 
-  LogIn, LayoutDashboard, Package, FileText, ShoppingCart, 
-  FolderOpen, Gem, CircleDot, Truck, CheckCircle, Printer, 
-  Users, Eye, Upload, Sparkles, Edit, Globe
+  LogIn, LayoutDashboard, ShoppingCart, 
+  FolderOpen, Truck, CheckCircle, Printer, 
+  Users, Eye, Upload, Edit, Globe, Package,
+  Settings, BarChart3
 } from "lucide-react";
 import { DiagramBox } from "../diagrams/DiagramBox";
 import { DiagramSection } from "../diagrams/DiagramSection";
@@ -19,34 +20,8 @@ export const AdminPanelDiagram = () => {
 
       {/* Main branches */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Учёт материалов */}
-        <DiagramSection title="Учёт материалов">
-          <div className="space-y-3">
-            <div className="flex justify-center">
-              <DiagramBox variant="purple" icon={Package}>Материалы</DiagramBox>
-            </div>
-            <div className="flex flex-col items-center gap-2 pl-8">
-              <DiagramBox icon={Gem}>Камни по партиям</DiagramBox>
-              <DiagramBox icon={CircleDot}>Металл 999/925</DiagramBox>
-              <DiagramBox icon={Truck}>Отправки на заводы</DiagramBox>
-            </div>
-          </div>
-        </DiagramSection>
-
-        {/* ГИИС ДМДК */}
-        <DiagramSection title="ГИИС ДМДК">
-          <div className="space-y-3">
-            <div className="flex justify-center">
-              <DiagramBox variant="blue" icon={FileText}>ГИИС ДМДК</DiagramBox>
-            </div>
-            <div className="flex justify-center">
-              <DiagramBox icon={FileText}>Отчёты</DiagramBox>
-            </div>
-          </div>
-        </DiagramSection>
-
         {/* Работа с заказами */}
-        <DiagramSection title="Работа с заказами">
+        <DiagramSection title="Управление заказами">
           <div className="flex flex-wrap items-center gap-2 justify-center">
             <DiagramBox variant="orange" icon={ShoppingCart}>Заказы</DiagramBox>
             <Arrow />
@@ -56,7 +31,7 @@ export const AdminPanelDiagram = () => {
             <Arrow />
             <DiagramBox icon={Printer}>Печать накладной СДЭК</DiagramBox>
             <Arrow />
-            <DiagramBox icon={Users}>Передать курьеру</DiagramBox>
+            <DiagramBox icon={Truck}>Передать курьеру</DiagramBox>
             <Arrow />
             <DiagramBox icon={Eye}>Отслеживание</DiagramBox>
           </div>
@@ -67,13 +42,30 @@ export const AdminPanelDiagram = () => {
           <div className="flex flex-wrap items-center gap-2 justify-center">
             <DiagramBox variant="success" icon={FolderOpen}>Каталог</DiagramBox>
             <Arrow />
-            <DiagramBox icon={Upload}>Загрузка DBF от завода</DiagramBox>
+            <DiagramBox icon={Upload}>Загрузка из 1С</DiagramBox>
             <Arrow />
-            <DiagramBox icon={Sparkles}>Авто парсинг</DiagramBox>
-            <Arrow />
-            <DiagramBox icon={Edit}>Проверка / редактирование</DiagramBox>
+            <DiagramBox icon={Edit}>Редактирование</DiagramBox>
             <Arrow />
             <DiagramBox variant="success" icon={Globe}>Публикация на сайт</DiagramBox>
+          </div>
+        </DiagramSection>
+
+        {/* Клиенты */}
+        <DiagramSection title="Клиенты">
+          <div className="flex flex-wrap items-center gap-2 justify-center">
+            <DiagramBox variant="blue" icon={Users}>База клиентов</DiagramBox>
+            <Arrow />
+            <DiagramBox icon={Package}>История заказов</DiagramBox>
+            <Arrow />
+            <DiagramBox icon={Eye}>Детали клиента</DiagramBox>
+          </div>
+        </DiagramSection>
+
+        {/* Настройки и аналитика */}
+        <DiagramSection title="Настройки и аналитика">
+          <div className="flex flex-wrap items-center gap-2 justify-center">
+            <DiagramBox icon={Settings}>Настройки магазина</DiagramBox>
+            <DiagramBox variant="purple" icon={BarChart3}>Статистика продаж</DiagramBox>
           </div>
         </DiagramSection>
       </div>
