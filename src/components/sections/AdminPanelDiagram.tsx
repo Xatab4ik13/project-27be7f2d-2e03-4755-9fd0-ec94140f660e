@@ -2,7 +2,7 @@ import {
   LogIn, LayoutDashboard, ShoppingCart, 
   FolderOpen, Truck, CheckCircle, Printer, 
   Users, Eye, Upload, Edit, Globe, Package,
-  Settings, BarChart3
+  Settings, BarChart3, FileText, PenSquare, Image
 } from "lucide-react";
 import { DiagramBox } from "../diagrams/DiagramBox";
 import { DiagramSection } from "../diagrams/DiagramSection";
@@ -47,6 +47,19 @@ export const AdminPanelDiagram = () => {
             <DiagramBox icon={Edit}>Редактирование</DiagramBox>
             <Arrow />
             <DiagramBox variant="success" icon={Globe}>Публикация на сайт</DiagramBox>
+          </div>
+        </DiagramSection>
+
+        {/* Блог */}
+        <DiagramSection title="Управление блогом">
+          <div className="flex flex-wrap items-center gap-2 justify-center">
+            <DiagramBox variant="purple" icon={FileText}>Все статьи</DiagramBox>
+            <Arrow />
+            <DiagramBox icon={PenSquare}>Создать / редактировать</DiagramBox>
+            <Arrow />
+            <DiagramBox icon={Image}>Добавить изображения</DiagramBox>
+            <Arrow />
+            <DiagramBox variant="success" icon={Globe}>Опубликовать</DiagramBox>
           </div>
         </DiagramSection>
 
