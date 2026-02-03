@@ -38,7 +38,7 @@ export const CustomerJourneyDiagram = () => {
         <Arrow />
         <DiagramBox icon={CreditCard}>Оформление заказа</DiagramBox>
         <Arrow />
-        <DiagramBox variant="warning" icon={CreditCard}>Оплата T-Bank</DiagramBox>
+        <DiagramBox variant="warning" icon={CreditCard}>Оплата онлайн</DiagramBox>
       </div>
 
       {/* После оплаты */}
