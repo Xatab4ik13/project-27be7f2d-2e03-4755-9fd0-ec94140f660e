@@ -36,7 +36,7 @@ export const ArchitectureDiagram = () => {
       <div className="space-y-4">
         <DiagramSection title="🔗 Интеграции">
           <div className="grid grid-cols-2 gap-2">
-            <DiagramBox variant="warning" icon={CreditCard}>T-Bank Касса</DiagramBox>
+            <DiagramBox variant="warning" icon={CreditCard}>Платежная система</DiagramBox>
             <DiagramBox icon={Truck}>СДЭК API</DiagramBox>
             <DiagramBox icon={MessageSquare}>SMS-уведомления</DiagramBox>
             <DiagramBox variant="blue" icon={FileSpreadsheet}>1С</DiagramBox>
