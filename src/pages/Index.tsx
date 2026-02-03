@@ -33,14 +33,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <header className="relative overflow-hidden py-16 md:py-24 px-4">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
-        <div className="absolute top-20 right-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 left-10 w-48 h-48 bg-primary/5 rounded-full blur-2xl" />
-        
-        <div className="container mx-auto max-w-6xl relative z-10">
+      <header className="relative py-16 md:py-24 px-4 border-b border-border">
+        <div className="container mx-auto max-w-6xl">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20 animate-glow">
+            <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20">
               <Gem className="w-10 h-10 text-primary" />
             </div>
           </div>
@@ -58,7 +54,7 @@ const Index = () => {
           <div className="flex justify-center">
             <Button
               onClick={handleSavePDF}
-              className="no-print bg-primary hover:bg-gold-dark text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl"
+              className="no-print bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl"
             >
               <Download className="w-5 h-5 mr-2" />
               Сохранить как PDF
@@ -164,17 +160,17 @@ const Index = () => {
             <TechBadge
               icon={Server}
               label="Frontend"
-              description="React (Lovable)"
+              description="React + Tailwind"
             />
             <TechBadge
               icon={Database}
               label="Backend"
-              description="Node.js + PostgreSQL (TimeWeb)"
+              description="Node.js + PostgreSQL (TimeWeb VPS)"
             />
             <TechBadge
               icon={CreditCard}
               label="Платежи"
-              description="T-Bank"
+              description="T-Bank Касса"
             />
             <TechBadge
               icon={Truck}
@@ -327,7 +323,7 @@ const Index = () => {
                 <div className="p-2 rounded-lg bg-primary/20">
                   <Server className="w-6 h-6 text-primary" />
                 </div>
-                <h4 className="font-semibold text-foreground">Lovable AI</h4>
+                <h4 className="font-semibold text-foreground">Разработчик</h4>
               </div>
               <p className="text-muted-foreground text-sm">
                 Весь код (frontend, backend, интеграции)

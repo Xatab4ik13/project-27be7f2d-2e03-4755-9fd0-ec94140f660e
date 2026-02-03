@@ -104,9 +104,7 @@
 
 @layer components {
   .section-card {
-    @apply bg-card rounded-2xl p-8 border border-border;
-    background: var(--gradient-card);
-    box-shadow: var(--shadow-card);
+    @apply bg-card rounded-xl p-8 border border-border;
   }
 
   .gold-text {
@@ -138,8 +136,7 @@
   }
 
   .timeline-dot {
-    @apply absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary shadow-lg;
-    box-shadow: 0 0 20px hsla(43, 74%, 52%, 0.5);
+    @apply absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary;
   }
 
   .db-table {
@@ -156,26 +153,8 @@
 }
 
 @layer utilities {
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-
   .animate-fade-up {
     animation: fadeUp 0.6s ease-out forwards;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  @keyframes glow {
-    from { box-shadow: 0 0 20px hsla(43, 74%, 52%, 0.3); }
-    to { box-shadow: 0 0 40px hsla(43, 74%, 52%, 0.6); }
   }
 
   @keyframes fadeUp {
