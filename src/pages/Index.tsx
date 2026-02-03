@@ -9,9 +9,9 @@ import {
   ShoppingCart,
   Calendar,
   Users,
-  Database,
   User,
   FileSpreadsheet,
+  Wallet,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionCard } from "@/components/SectionCard";
@@ -20,8 +20,7 @@ import { GIISDiagram } from "@/components/sections/GIISDiagram";
 import { ArchitectureDiagram } from "@/components/sections/ArchitectureDiagram";
 import { DBFLoadingDiagram } from "@/components/sections/DBFLoadingDiagram";
 import { CustomerJourneyDiagram } from "@/components/sections/CustomerJourneyDiagram";
-import { ComparisonTable } from "@/components/diagrams/ComparisonTable";
-import { DatabaseTable } from "@/components/DatabaseTable";
+import { BenefitsList } from "@/components/diagrams/BenefitsList";
 import { TimelineItem } from "@/components/TimelineItem";
 
 const Index = () => {
@@ -29,12 +28,14 @@ const Index = () => {
     window.print();
   };
 
-  const comparisonRows = [
-    { before: "Ввод товаров руками", after: "Загрузка DBF → товары на сайте" },
-    { before: "Расчёт цен в Excel", after: "Авто-расчёт себестоимости и цены" },
-    { before: "Гашение УИН по одному", after: "Пакетное гашение УИН ночью" },
-    { before: "Отслеживание заказов в блокноте", after: "Дашборд со всеми заказами" },
-    { before: "Звонки клиентам о статусе", after: "SMS-уведомления автоматически" },
+  const benefits = [
+    "Загрузка DBF → товары сразу на сайте",
+    "Авто-расчёт себестоимости и цены",
+    "Пакетное гашение УИН ночью",
+    "Дашборд со всеми заказами в реальном времени",
+    "SMS-уведомления клиентам автоматически",
+    "Интеграция с СДЭК: печать накладных в один клик",
+    "Экспорт данных в 1С для бухгалтерии",
   ];
 
   return (
@@ -73,9 +74,9 @@ const Index = () => {
       {/* Main Content */}
       <main className="container mx-auto max-w-6xl px-4 py-8 space-y-6">
         
-        {/* Сравнение До/После */}
-        <SectionCard title="Сравнение: До и После" icon={GitCompare}>
-          <ComparisonTable rows={comparisonRows} />
+        {/* Преимущества автоматизации */}
+        <SectionCard title="Преимущества автоматизации" icon={GitCompare}>
+          <BenefitsList benefits={benefits} />
         </SectionCard>
 
         {/* Путь покупателя */}
@@ -84,7 +85,7 @@ const Index = () => {
         </SectionCard>
 
         {/* Панель управления */}
-        <SectionCard title="Панель управления Ольги" icon={LayoutDashboard}>
+        <SectionCard title="Панель управления Админа" icon={LayoutDashboard}>
           <AdminPanelDiagram />
         </SectionCard>
 
@@ -103,53 +104,27 @@ const Index = () => {
           <ArchitectureDiagram />
         </SectionCard>
 
-        {/* База данных */}
-        <SectionCard title="База данных" icon={Database}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <DatabaseTable
-              name="products"
-              fields={["UIN", "название", "металл", "проба", "вес", "камни", "цена"]}
-            />
-            <DatabaseTable
-              name="orders"
-              fields={["номер", "клиент", "сумма", "статус", "трекинг"]}
-            />
-            <DatabaseTable
-              name="stone_batches"
-              fields={["партия", "караты", "цена за карат"]}
-            />
-            <DatabaseTable
-              name="metal_batches"
-              fields={["партия", "металл", "проба", "вес", "цена за грамм"]}
-            />
-            <DatabaseTable
-              name="giis_events"
-              fields={["UIN", "тип операции", "дата", "статус отправки"]}
-            />
-          </div>
-        </SectionCard>
-
         {/* Сроки разработки */}
         <SectionCard title="Сроки разработки" icon={Calendar}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
               <TimelineItem
-                week="Неделя 1"
+                week="Дни 1-3"
                 title="Интернет-магазин"
-                description="Каталог, корзина, заказы"
+                description="Каталог, корзина, оформление заказов"
               />
               <TimelineItem
-                week="Неделя 2"
+                week="Дни 4-6"
                 title="Панель управления"
                 description="Заказы, товары, загрузка DBF"
               />
               <TimelineItem
-                week="Неделя 3"
+                week="Дни 7-8"
                 title="Учёт и интеграции"
-                description="Учёт металла и камней, T-Bank/СДЭК"
+                description="Учёт металла и камней, платежи, СДЭК"
               />
               <TimelineItem
-                week="Неделя 4"
+                week="Дни 9-10"
                 title="ГИИС и тестирование"
                 description="Очередь ГИИС, экспорт в 1С, тестирование"
               />
@@ -157,15 +132,47 @@ const Index = () => {
             <div className="flex items-center justify-center">
               <div className="bg-secondary/30 border border-border rounded-xl p-8 text-center">
                 <div className="text-5xl font-serif font-bold gold-gradient-text mb-2">
-                  3-4
+                  10
                 </div>
                 <div className="text-xl text-foreground font-semibold">
-                  недели
+                  дней
                 </div>
                 <div className="text-muted-foreground mt-2">
                   до запуска MVP
                 </div>
               </div>
+            </div>
+          </div>
+        </SectionCard>
+
+        {/* Стоимость работы */}
+        <SectionCard title="Стоимость работы" icon={FileSpreadsheet}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-secondary/30 rounded-lg p-5 border border-border/50 text-center">
+              <div className="text-sm text-muted-foreground mb-2">Дни 1-3</div>
+              <div className="text-2xl font-bold gold-gradient-text">60 000 ₽</div>
+              <div className="text-sm text-foreground mt-2">Интернет-магазин</div>
+            </div>
+            <div className="bg-secondary/30 rounded-lg p-5 border border-border/50 text-center">
+              <div className="text-sm text-muted-foreground mb-2">Дни 4-6</div>
+              <div className="text-2xl font-bold gold-gradient-text">60 000 ₽</div>
+              <div className="text-sm text-foreground mt-2">Панель управления</div>
+            </div>
+            <div className="bg-secondary/30 rounded-lg p-5 border border-border/50 text-center">
+              <div className="text-sm text-muted-foreground mb-2">Дни 7-8</div>
+              <div className="text-2xl font-bold gold-gradient-text">40 000 ₽</div>
+              <div className="text-sm text-foreground mt-2">Учёт и интеграции</div>
+            </div>
+            <div className="bg-secondary/30 rounded-lg p-5 border border-border/50 text-center">
+              <div className="text-sm text-muted-foreground mb-2">Дни 9-10</div>
+              <div className="text-2xl font-bold gold-gradient-text">40 000 ₽</div>
+              <div className="text-sm text-foreground mt-2">ГИИС и тесты</div>
+            </div>
+          </div>
+          <div className="mt-6 text-center">
+            <div className="inline-block bg-primary/10 border border-primary/20 rounded-xl px-8 py-4">
+              <div className="text-sm text-muted-foreground mb-1">Итого</div>
+              <div className="text-3xl font-bold gold-gradient-text">200 000 ₽</div>
             </div>
           </div>
         </SectionCard>
