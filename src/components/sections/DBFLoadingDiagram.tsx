@@ -19,14 +19,14 @@ export const DBFLoadingDiagram = () => {
             <Arrow direction="down" />
             <DiagramBox icon={FileSpreadsheet}>DBF-файл с данными</DiagramBox>
             <Arrow direction="down" />
-            <DiagramBox icon={Send}>Отправка Ольге</DiagramBox>
+            <DiagramBox icon={Send}>Отправка Админу</DiagramBox>
           </div>
         </DiagramSection>
 
         {/* ЗАГРУЗКА */}
         <DiagramSection title="📥 Загрузка">
           <div className="flex flex-col items-center gap-2">
-            <DiagramBox variant="orange" icon={Upload}>Ольга загружает DBF</DiagramBox>
+            <DiagramBox variant="orange" icon={Upload}>Админ загружает DBF</DiagramBox>
             <Arrow direction="down" />
             <DiagramBox variant="purple" icon={Sparkles}>Автоматический парсинг</DiagramBox>
           </div>
