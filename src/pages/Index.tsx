@@ -185,20 +185,40 @@ const Index = () => {
 
         {/* Стоимость работы */}
         <SectionCard title="Стоимость работы" icon={FileSpreadsheet}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div className="bg-secondary/30 rounded-xl p-6 border border-border text-center">
               <div className="text-sm text-muted-foreground mb-2">Без договора</div>
-              <div className="text-4xl font-bold text-primary mb-2">70 000 ₽</div>
-              <div className="text-sm text-muted-foreground">
-                Оплата по факту выполнения этапов
-              </div>
+              <div className="text-4xl font-bold text-primary">70 000 ₽</div>
             </div>
             <div className="bg-primary/10 rounded-xl p-6 border border-primary/30 text-center">
-              <div className="text-sm text-muted-foreground mb-2">С договором (+12%)</div>
-              <div className="text-4xl font-bold text-primary mb-2">78 400 ₽</div>
-              <div className="text-sm text-muted-foreground">
-                Официальное оформление, гарантии
+              <div className="text-sm text-muted-foreground mb-2">С договором</div>
+              <div className="text-4xl font-bold text-primary">80 000 ₽</div>
+            </div>
+          </div>
+
+          {/* Схема оплаты */}
+          <div className="bg-secondary/30 rounded-xl p-6 border border-border">
+            <h4 className="font-semibold text-foreground mb-4 text-center">Схема оплаты</h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="text-center p-4 bg-background/50 rounded-lg border border-border/50">
+                <div className="text-2xl font-bold text-primary mb-1">40%</div>
+                <div className="text-sm text-muted-foreground">Предоплата перед началом работ</div>
               </div>
+              <div className="text-center p-4 bg-background/50 rounded-lg border border-border/50">
+                <div className="text-2xl font-bold text-primary mb-1">40%</div>
+                <div className="text-sm text-muted-foreground">После сдачи Этапа 1 (дизайн и вёрстка)</div>
+              </div>
+              <div className="text-center p-4 bg-background/50 rounded-lg border border-border/50">
+                <div className="text-2xl font-bold text-primary mb-1">20%</div>
+                <div className="text-sm text-muted-foreground">После сдачи проекта (окончательный расчёт)</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Поддержка */}
+          <div className="mt-6 text-center p-4 bg-primary/10 rounded-xl border border-primary/30">
+            <div className="text-primary font-medium">
+              ✓ Бесплатная поддержка 30 дней после сдачи проекта
             </div>
           </div>
         </SectionCard>
