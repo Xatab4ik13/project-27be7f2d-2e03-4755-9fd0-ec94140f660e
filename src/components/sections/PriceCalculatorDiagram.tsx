@@ -1,52 +1,28 @@
-import { Calculator, MapPin, FileText, Printer, DoorOpen, Wrench, Settings } from "lucide-react";
+import { Calculator, MapPin, FileText, Printer, DoorOpen, Wrench, Settings, ListChecks } from "lucide-react";
 
 export const PriceCalculatorDiagram = () => {
-  const services = [
-    { name: "Установка межкомнатной двери", moscow: "от 3 500 ₽", spb: "от 3 200 ₽" },
-    { name: "Установка входной двери", moscow: "от 5 000 ₽", spb: "от 4 500 ₽" },
-    { name: "Врезка замка", moscow: "от 1 500 ₽", spb: "от 1 300 ₽" },
-    { name: "Регулировка двери", moscow: "от 800 ₽", spb: "от 700 ₽" },
-    { name: "Демонтаж старой двери", moscow: "от 500 ₽", spb: "от 400 ₽" },
-  ];
-
   return (
     <div className="space-y-6">
-      {/* Прайс-лист по регионам */}
-      <div>
+      {/* Описание страницы прайс-листа */}
+      <div className="bg-secondary/30 rounded-xl p-5 border border-border">
         <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-          <MapPin className="w-5 h-5 text-primary" />
-          Прайс-лист по регионам
+          <ListChecks className="w-5 h-5 text-primary" />
+          Страница цен с разделением по регионам
         </h4>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-3 px-4 font-medium text-muted-foreground">Услуга</th>
-                <th className="text-center py-3 px-4 font-medium text-muted-foreground">
-                  <span className="inline-flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    Москва
-                  </span>
-                </th>
-                <th className="text-center py-3 px-4 font-medium text-muted-foreground">
-                  <span className="inline-flex items-center gap-1">
-                    <span className="w-2 h-2 rounded-full bg-accent"></span>
-                    Санкт-Петербург
-                  </span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {services.map((service, index) => (
-                <tr key={index} className="border-b border-border/50 hover:bg-secondary/20">
-                  <td className="py-3 px-4 text-foreground">{service.name}</td>
-                  <td className="py-3 px-4 text-center font-medium text-primary">{service.moscow}</td>
-                  <td className="py-3 px-4 text-center font-medium text-accent">{service.spb}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li className="flex items-start gap-2">
+            <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+            <span>Отдельные прайс-листы для Москвы и Санкт-Петербурга</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <DoorOpen className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+            <span>Цены на все виды услуг: установка, врезка замков, демонтаж и т.д.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <Settings className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+            <span>Управление ценами через админ-панель</span>
+          </li>
+        </ul>
       </div>
 
       {/* Калькулятор сметы */}
@@ -63,7 +39,7 @@ export const PriceCalculatorDiagram = () => {
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-              <span>Выбор города (Москва/Питер)</span>
+              <span>Выбор города (Москва/Питер) — цены подстраиваются автоматически</span>
             </li>
             <li className="flex items-start gap-2">
               <Settings className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -79,7 +55,7 @@ export const PriceCalculatorDiagram = () => {
         <div className="bg-secondary/30 rounded-xl p-5 border border-border">
           <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
             <FileText className="w-5 h-5 text-primary" />
-            Генерация сметы
+            Генерация печатной сметы
           </h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
