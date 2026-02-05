@@ -9,6 +9,7 @@ import {
   FileSpreadsheet,
   Wrench,
   User,
+  Calculator,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionCard } from "@/components/SectionCard";
@@ -18,6 +19,7 @@ import { Bitrix24Diagram } from "@/components/sections/Bitrix24Diagram";
 import { SiteStructureDiagram } from "@/components/sections/SiteStructureDiagram";
 import { TechnicalDiagram } from "@/components/sections/TechnicalDiagram";
 import { BenefitsList } from "@/components/diagrams/BenefitsList";
+import { PriceCalculatorDiagram } from "@/components/sections/PriceCalculatorDiagram";
 
 const Index = () => {
   const handleSavePDF = () => {
@@ -30,6 +32,9 @@ const Index = () => {
     "Двусторонняя интеграция с Битрикс24",
     "Разделение на Москву и Санкт-Петербург",
     "Полный цикл: заявка → замер → монтаж",
+    "Страница цен с разделением по регионам",
+    "Интерактивный калькулятор сметы",
+    "Генерация печатной сметы с логотипом",
     "Загрузка фото и документов на каждом этапе",
     "SMS/WhatsApp уведомления",
     "Мобильная адаптация всех кабинетов",
@@ -83,6 +88,11 @@ const Index = () => {
         {/* Структура сайта */}
         <SectionCard title="Структура сайта" icon={Globe}>
           <SiteStructureDiagram />
+        </SectionCard>
+
+        {/* Прайс-лист и калькулятор */}
+        <SectionCard title="Прайс-лист и калькулятор сметы" icon={Calculator}>
+          <PriceCalculatorDiagram />
         </SectionCard>
 
         {/* Роли пользователей */}
