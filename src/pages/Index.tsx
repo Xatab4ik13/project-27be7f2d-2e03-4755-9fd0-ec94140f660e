@@ -1,26 +1,23 @@
 import {
-  Gem,
+  DoorOpen,
   Download,
-  LayoutDashboard,
-  Server,
-  Factory,
-  GitCompare,
-  ShoppingCart,
-  Calendar,
+  Globe,
   Users,
-  User,
+  ArrowLeftRight,
+  Server,
+  Calendar,
   FileSpreadsheet,
-  UserCircle,
+  Wrench,
+  User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionCard } from "@/components/SectionCard";
-import { AdminPanelDiagram } from "@/components/sections/AdminPanelDiagram";
-import { ArchitectureDiagram } from "@/components/sections/ArchitectureDiagram";
-import { DBFLoadingDiagram } from "@/components/sections/DBFLoadingDiagram";
-import { CustomerJourneyDiagram } from "@/components/sections/CustomerJourneyDiagram";
-import { CustomerAccountDiagram } from "@/components/sections/CustomerAccountDiagram";
+import { RolesDiagram } from "@/components/sections/RolesDiagram";
+import { RequestFlowDiagram } from "@/components/sections/RequestFlowDiagram";
+import { Bitrix24Diagram } from "@/components/sections/Bitrix24Diagram";
+import { SiteStructureDiagram } from "@/components/sections/SiteStructureDiagram";
+import { TechnicalDiagram } from "@/components/sections/TechnicalDiagram";
 import { BenefitsList } from "@/components/diagrams/BenefitsList";
-import { TimelineItem } from "@/components/TimelineItem";
 
 const Index = () => {
   const handleSavePDF = () => {
@@ -28,17 +25,17 @@ const Index = () => {
   };
 
   const benefits = [
-    "Уникальный дизайн под ваш бренд",
-    "Адаптивная вёрстка для всех устройств",
-    "Полноценный каталог с фильтрами и поиском",
-    "Личный кабинет покупателя с историей заказов",
-    "Блог с управлением через админ-панель",
-    "Корзина и оформление заказов онлайн",
-    "Оплата картой через платёжную систему",
-    "Автоматические SMS-уведомления клиентам",
-    "Интеграция с СДЭК: печать накладных в один клик",
-    "Синхронизация товаров и заказов с 1С",
-    "Удобная админ-панель для управления магазином",
+    "Многостраничный сайт компании",
+    "5 типов личных кабинетов по ролям",
+    "Двусторонняя интеграция с Битрикс24",
+    "Разделение на Москву и Санкт-Петербург",
+    "Полный цикл: заявка → замер → монтаж",
+    "Загрузка фото и документов на каждом этапе",
+    "SMS/WhatsApp уведомления",
+    "Мобильная адаптация всех кабинетов",
+    "Логи действий и история статусов",
+    "Облачное хранилище для файлов",
+    "Админ-панель для управления системой",
   ];
 
   return (
@@ -48,18 +45,19 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="p-3 rounded-xl bg-primary/10 border border-primary/20">
-              <Gem className="w-8 h-8 text-primary" />
+              <DoorOpen className="w-8 h-8 text-primary" />
             </div>
           </div>
           
           <h1 className="text-3xl md:text-5xl font-serif font-bold text-center mb-4">
-            <span className="gold-gradient-text">Ювелирный интернет-магазин</span>
+            <span className="text-primary">Сервис установки дверей</span>
             <br />
-            <span className="text-foreground">с интеграцией 1С</span>
+            <span className="text-foreground">Москва и Санкт-Петербург</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-6">
-            Современный интернет-магазин с личным кабинетом, админ-панелью и автоматической синхронизацией с 1С
+          <p className="text-lg md:text-xl text-muted-foreground text-center max-w-3xl mx-auto mb-6">
+            Многостраничный сайт с личными кабинетами, интеграцией Битрикс24, 
+            разделением по регионам и полным циклом работы
           </p>
           
           <div className="flex justify-center">
@@ -77,34 +75,34 @@ const Index = () => {
       {/* Main Content */}
       <main className="container mx-auto max-w-6xl px-4 py-8 space-y-6">
         
-        {/* Преимущества */}
-        <SectionCard title="Что входит в проект" icon={GitCompare}>
+        {/* Что входит в проект */}
+        <SectionCard title="Что входит в проект" icon={Wrench}>
           <BenefitsList benefits={benefits} />
         </SectionCard>
 
-        {/* Путь покупателя */}
-        <SectionCard title="Путь покупателя" icon={ShoppingCart}>
-          <CustomerJourneyDiagram />
+        {/* Структура сайта */}
+        <SectionCard title="Структура сайта" icon={Globe}>
+          <SiteStructureDiagram />
         </SectionCard>
 
-        {/* Личный кабинет покупателя */}
-        <SectionCard title="Личный кабинет покупателя" icon={UserCircle}>
-          <CustomerAccountDiagram />
+        {/* Роли пользователей */}
+        <SectionCard title="Личные кабинеты по ролям" icon={Users}>
+          <RolesDiagram />
         </SectionCard>
 
-        {/* Панель управления */}
-        <SectionCard title="Панель управления Админа" icon={LayoutDashboard}>
-          <AdminPanelDiagram />
+        {/* Путь заявки */}
+        <SectionCard title="Путь заявки" icon={ArrowLeftRight}>
+          <RequestFlowDiagram />
         </SectionCard>
 
-        {/* Загрузка товаров */}
-        <SectionCard title="Загрузка товаров и синхронизация с 1С" icon={Factory}>
-          <DBFLoadingDiagram />
+        {/* Интеграция с Битрикс24 */}
+        <SectionCard title="Интеграция с Битрикс24" icon={ArrowLeftRight}>
+          <Bitrix24Diagram />
         </SectionCard>
 
-        {/* Техническая архитектура */}
-        <SectionCard title="Техническая архитектура" icon={Server}>
-          <ArchitectureDiagram />
+        {/* Техническая реализация */}
+        <SectionCard title="Техническая реализация" icon={Server}>
+          <TechnicalDiagram />
         </SectionCard>
 
         {/* Этапы разработки */}
@@ -122,11 +120,11 @@ const Index = () => {
                 </div>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Дизайн-макеты всех страниц</li>
-                <li>• Адаптивная вёрстка (мобильные, планшеты, ПК)</li>
-                <li>• Главная, каталог, карточка товара</li>
-                <li>• Корзина, оформление заказа</li>
-                <li>• Личный кабинет покупателя</li>
+                <li>• Дизайн-макеты публичной части</li>
+                <li>• Дизайн личных кабинетов</li>
+                <li>• Адаптивная вёрстка (мобильная версия)</li>
+                <li>• Главная, услуги, портфолио, контакты</li>
+                <li>• Формы заявок</li>
               </ul>
             </div>
 
@@ -137,17 +135,17 @@ const Index = () => {
                   2
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">Функционал</h3>
+                  <h3 className="font-semibold text-foreground">Функционал кабинетов</h3>
                   <span className="text-sm text-muted-foreground">4 дня</span>
                 </div>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Каталог с фильтрами и поиском</li>
-                <li>• Регистрация и авторизация</li>
-                <li>• Личный кабинет с историей заказов</li>
-                <li>• Корзина и оформление заказов</li>
-                <li>• Интеграция платёжной системы</li>
-                <li>• Админ-панель управления</li>
+                <li>• Авторизация и роли пользователей</li>
+                <li>• Кабинет партнёра (заявки, фото)</li>
+                <li>• Кабинет замерщика</li>
+                <li>• Кабинет бригады монтажников</li>
+                <li>• Кабинет менеджера</li>
+                <li>• Админ-панель</li>
               </ul>
             </div>
 
@@ -163,10 +161,10 @@ const Index = () => {
                 </div>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Интеграция с 1С (товары, заказы)</li>
-                <li>• СДЭК: расчёт доставки, накладные</li>
-                <li>• SMS-уведомления клиентам</li>
-                <li>• Тестирование всех функций</li>
+                <li>• Интеграция с Битрикс24 (двусторонняя)</li>
+                <li>• SMS/WhatsApp уведомления</li>
+                <li>• Облачное хранилище для фото</li>
+                <li>• Тестирование всех ролей</li>
                 <li>• Деплой и запуск</li>
               </ul>
             </div>
@@ -175,7 +173,7 @@ const Index = () => {
           {/* Итого дней */}
           <div className="flex justify-center mt-6">
             <div className="bg-secondary/30 border border-border rounded-xl px-8 py-4 text-center">
-              <div className="text-4xl font-serif font-bold gold-gradient-text mb-1">
+              <div className="text-4xl font-serif font-bold text-primary mb-1">
                 10 дней
               </div>
               <div className="text-muted-foreground">
@@ -187,36 +185,20 @@ const Index = () => {
 
         {/* Стоимость работы */}
         <SectionCard title="Стоимость работы" icon={FileSpreadsheet}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-secondary/30 rounded-lg p-6 border border-border/50 text-center">
-              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold mx-auto mb-3">
-                1
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-secondary/30 rounded-xl p-6 border border-border text-center">
+              <div className="text-sm text-muted-foreground mb-2">Без договора</div>
+              <div className="text-4xl font-bold text-primary mb-2">70 000 ₽</div>
+              <div className="text-sm text-muted-foreground">
+                Оплата по факту выполнения этапов
               </div>
-              <div className="text-sm text-muted-foreground mb-2">Этап 1 • 3 дня</div>
-              <div className="text-2xl font-bold gold-gradient-text">40 000 ₽</div>
-              <div className="text-sm text-foreground mt-2">Дизайн и вёрстка</div>
             </div>
-            <div className="bg-secondary/30 rounded-lg p-6 border border-border/50 text-center">
-              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold mx-auto mb-3">
-                2
+            <div className="bg-primary/10 rounded-xl p-6 border border-primary/30 text-center">
+              <div className="text-sm text-muted-foreground mb-2">С договором (+12%)</div>
+              <div className="text-4xl font-bold text-primary mb-2">78 400 ₽</div>
+              <div className="text-sm text-muted-foreground">
+                Официальное оформление, гарантии
               </div>
-              <div className="text-sm text-muted-foreground mb-2">Этап 2 • 4 дня</div>
-              <div className="text-2xl font-bold gold-gradient-text">50 000 ₽</div>
-              <div className="text-sm text-foreground mt-2">Функционал</div>
-            </div>
-            <div className="bg-secondary/30 rounded-lg p-6 border border-border/50 text-center">
-              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold mx-auto mb-3">
-                3
-              </div>
-              <div className="text-sm text-muted-foreground mb-2">Этап 3 • 3 дня</div>
-              <div className="text-2xl font-bold gold-gradient-text">30 000 ₽</div>
-              <div className="text-sm text-foreground mt-2">Интеграции и запуск</div>
-            </div>
-          </div>
-          <div className="mt-6 text-center">
-            <div className="inline-block bg-primary/10 border border-primary/20 rounded-xl px-8 py-4">
-              <div className="text-sm text-muted-foreground mb-1">Итого</div>
-              <div className="text-3xl font-bold gold-gradient-text">120 000 ₽</div>
             </div>
           </div>
         </SectionCard>
@@ -232,7 +214,8 @@ const Index = () => {
                 <h4 className="font-semibold text-foreground">Разработчик</h4>
               </div>
               <p className="text-muted-foreground text-sm">
-                Дизайн, вёрстка, интернет-магазин, личный кабинет, админ-панель, все интеграции
+                Дизайн, вёрстка, все личные кабинеты, интеграция Битрикс24, 
+                уведомления, хранилище файлов, деплой
               </p>
             </div>
             <div className="bg-secondary/30 rounded-lg p-5 border border-border/50">
@@ -243,7 +226,8 @@ const Index = () => {
                 <h4 className="font-semibold text-foreground">Заказчик</h4>
               </div>
               <p className="text-muted-foreground text-sm">
-                Контент, фото товаров, доступы к API платёжной системы и 1С
+                Контент (тексты, фото портфолио), доступы к Битрикс24, 
+                тексты SMS-уведомлений, список пользователей для регистрации
               </p>
             </div>
           </div>
@@ -264,10 +248,10 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border py-6 text-center text-muted-foreground">
         <div className="flex items-center justify-center gap-2 mb-1">
-          <Gem className="w-4 h-4 text-primary" />
-          <span className="font-serif text-foreground">Ювелирный интернет-магазин</span>
+          <DoorOpen className="w-4 h-4 text-primary" />
+          <span className="font-serif text-foreground">Сервис установки дверей</span>
         </div>
-        <p className="text-sm">Современные продажи с удобным управлением</p>
+        <p className="text-sm">Москва • Санкт-Петербург</p>
       </footer>
     </div>
   );
