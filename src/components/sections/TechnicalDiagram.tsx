@@ -9,22 +9,22 @@ export const TechnicalDiagram = () => {
     {
       icon: Database,
       title: "Стек",
-      items: ["WordPress 6.7+, WooCommerce 8.6–9.x", "MySQL 8.0+ / MariaDB 10.6+", "PHP 8.3, Nginx 1.20+", "Кастомная блок-тема (Gutenberg)"]
+      items: ["React 18, TypeScript, Tailwind CSS", "PostgreSQL (Supabase)", "Node.js, Edge Functions", "Vite, SPA-архитектура"]
     },
     {
       icon: Shield,
       title: "Безопасность",
-      items: ["HTTPS, SSL", "reCAPTCHA", "Защита от брутфорса", "Онлайн-чеки (54-ФЗ)"]
+      items: ["HTTPS, SSL", "JWT-авторизация, RLS-политики", "Защита API, rate limiting", "Онлайн-чеки (54-ФЗ)"]
     },
     {
       icon: Cloud,
-      title: "Хостинг и CDN",
-      items: ["Selectel / Reg.ru", "CDN Qrator Labs", "OPcache, Redis (опц.)", "Ежедневный бэкап"]
+      title: "Хостинг",
+      items: ["Фронтенд — Timeweb Cloud", "Бэкенд — VPS Timeweb", "Nginx reverse proxy", "Ежедневный бэкап БД"]
     },
     {
       icon: Gauge,
       title: "Производительность",
-      items: ["LCP ≤ 2.5s, CLS ≤ 0.1", "PageSpeed Mobile 75+", "Lazy-load, WebP", "Core Web Vitals — зелёная зона"]
+      items: ["LCP ≤ 2.5s, CLS ≤ 0.1", "PageSpeed Mobile 80+", "Lazy-load, WebP, code splitting", "Core Web Vitals — зелёная зона"]
     },
     {
       icon: Search,

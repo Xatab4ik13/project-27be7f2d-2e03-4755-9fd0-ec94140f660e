@@ -118,14 +118,14 @@ const Index = () => {
                   1
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">Дизайн и вёрстка</h3>
-                  <span className="text-sm text-muted-foreground">5 дней</span>
+                  <h3 className="font-semibold text-foreground">Дизайн и фронтенд</h3>
+                  <span className="text-sm text-muted-foreground">3 дня</span>
                 </div>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>• Дизайн-макеты (главная, каталог, карточка)</li>
                 <li>• Адаптивная mobile-first вёрстка</li>
-                <li>• Кастомная блок-тема WordPress</li>
+                <li>• Компоненты каталога и карточек товаров</li>
                 <li>• Шаблоны блога и статических страниц</li>
               </ul>
             </div>
@@ -136,16 +136,16 @@ const Index = () => {
                   2
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground">Функционал магазина</h3>
-                  <span className="text-sm text-muted-foreground">7 дней</span>
+                  <h3 className="font-semibold text-foreground">Бэкенд и функционал</h3>
+                  <span className="text-sm text-muted-foreground">4 дня</span>
                 </div>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• WooCommerce: каталог, корзина, заказ</li>
-                <li>• Фильтры, поиск, сортировка</li>
+                <li>• База данных, API, авторизация</li>
+                <li>• Каталог, корзина, оформление заказа</li>
                 <li>• AR/3D интеграция (model-viewer)</li>
+                <li>• Фильтры, поиск, сортировка</li>
                 <li>• Личный кабинет покупателя</li>
-                <li>• Оплата и доставка</li>
               </ul>
             </div>
 
@@ -156,15 +156,15 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">Интеграции и запуск</h3>
-                  <span className="text-sm text-muted-foreground">5 дней</span>
+                  <span className="text-sm text-muted-foreground">3 дня</span>
                 </div>
               </div>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• CRM, платёжные системы</li>
+                <li>• Платёжные системы, доставка</li>
                 <li>• Уведомления (email/SMS/Telegram)</li>
                 <li>• SEO, аналитика, GTM</li>
-                <li>• Тестирование и оптимизация</li>
-                <li>• Деплой и запуск</li>
+                <li>• Деплой фронта и бэкенда</li>
+                <li>• Тестирование и запуск</li>
               </ul>
             </div>
           </div>
@@ -172,7 +172,7 @@ const Index = () => {
           <div className="flex justify-center mt-6">
             <div className="bg-secondary/30 border border-border rounded-xl px-8 py-4 text-center">
               <div className="text-4xl font-serif font-bold text-primary mb-1">
-                17 дней
+                10 дней
               </div>
               <div className="text-muted-foreground">
                 до полного запуска
@@ -230,8 +230,8 @@ const Index = () => {
                 <h4 className="font-semibold text-foreground">Разработчик</h4>
               </div>
               <p className="text-muted-foreground text-sm">
-                Дизайн, вёрстка, WordPress + WooCommerce, AR-интеграция, 
-                платежи, доставка, SEO, аналитика, деплой
+                Дизайн, вёрстка, React-компоненты, бэкенд (PostgreSQL, API), 
+                AR-интеграция, платежи, доставка, SEO, аналитика, деплой
               </p>
             </div>
             <div className="bg-secondary/30 rounded-lg p-5 border border-border/50">
@@ -281,7 +281,7 @@ const Index = () => {
           <TreePine className="w-4 h-4 text-primary" />
           <span className="font-serif text-foreground">Интернет-магазин изделий из дерева</span>
         </div>
-        <p className="text-sm">WordPress + WooCommerce + AR</p>
+        <p className="text-sm">React + PostgreSQL + AR</p>
       </footer>
     </div>
   );
