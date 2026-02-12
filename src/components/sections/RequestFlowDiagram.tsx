@@ -1,63 +1,28 @@
 import { 
-  FileText, Send, Ruler, Camera, Wrench, 
-  CheckCircle, Users, ArrowRight, UserPlus, Globe
+  Search, ShoppingCart, CreditCard, Truck, 
+  CheckCircle, Package, Star, ArrowRight
 } from "lucide-react";
 import { DiagramBox } from "../diagrams/DiagramBox";
 import { Arrow } from "../diagrams/Arrow";
 
-export const RequestFlowDiagram = () => {
+export const OrderFlowDiagram = () => {
   return (
-    <div className="space-y-8">
-      {/* Два источника заявок */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-secondary/30 border border-border rounded-xl p-5">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="p-2 rounded-lg bg-primary/20">
-              <Globe className="w-5 h-5 text-primary" />
-            </div>
-            <h4 className="font-semibold text-foreground">Обычный клиент</h4>
-          </div>
-          <p className="text-sm text-muted-foreground mb-3">
-            Приходит через поиск (Яндекс, Google), заполняет форму заявки на сайте. 
-            Личный кабинет не нужен.
-          </p>
-          <div className="text-xs text-muted-foreground bg-secondary/50 rounded-lg px-3 py-2">
-            Заявка → Битрикс24 → Обработка менеджером
-          </div>
-        </div>
-
-        <div className="bg-primary/10 border border-primary/30 rounded-xl p-5">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="p-2 rounded-lg bg-primary/20">
-              <Users className="w-5 h-5 text-primary" />
-            </div>
-            <h4 className="font-semibold text-foreground">Контрагент (магазин)</h4>
-          </div>
-          <p className="text-sm text-muted-foreground mb-3">
-            Регистрируется на сайте, ждёт подтверждения админа. После — создаёт заявки 
-            из личного кабинета, видит статусы и получает файлы.
-          </p>
-          <div className="text-xs text-muted-foreground bg-primary/20 rounded-lg px-3 py-2">
-            Регистрация → Подтверждение → Личный кабинет → Заявки
-          </div>
-        </div>
-      </div>
-
-      {/* Путь заявки */}
+    <div className="space-y-6">
+      {/* Путь заказа */}
       <div className="bg-secondary/20 border border-border rounded-xl p-5">
-        <h4 className="font-semibold text-foreground mb-4 text-center">Путь заявки в системе</h4>
+        <h4 className="font-semibold text-foreground mb-4 text-center">Путь заказа</h4>
         
         <div className="flex flex-wrap items-center justify-center gap-3">
-          <DiagramBox variant="blue" icon={FileText}>
-            Заявка
+          <DiagramBox variant="blue" icon={Search}>
+            Поиск / Каталог
           </DiagramBox>
           <Arrow />
-          <DiagramBox variant="orange" icon={Send}>
-            Битрикс24
+          <DiagramBox variant="primary" icon={Package}>
+            Карточка товара
           </DiagramBox>
           <Arrow />
-          <DiagramBox variant="purple" icon={Users}>
-            Менеджер назначает
+          <DiagramBox variant="warning" icon={ShoppingCart}>
+            Корзина
           </DiagramBox>
         </div>
 
@@ -66,69 +31,62 @@ export const RequestFlowDiagram = () => {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
-          <DiagramBox variant="warning" icon={Ruler}>
-            Замерщик
+          <DiagramBox variant="orange" icon={CreditCard}>
+            Оплата
           </DiagramBox>
           <Arrow />
-          <DiagramBox icon={Camera}>
-            Фото + размеры
-          </DiagramBox>
-          <Arrow />
-          <DiagramBox variant="success" icon={CheckCircle}>
-            Замер выполнен
-          </DiagramBox>
-        </div>
-
-        <div className="flex justify-center my-4">
-          <ArrowRight className="text-muted-foreground rotate-90" size={24} />
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <DiagramBox variant="success" icon={Wrench}>
-            Бригада
-          </DiagramBox>
-          <Arrow />
-          <DiagramBox icon={Camera}>
-            Фото после монтажа
+          <DiagramBox variant="purple" icon={Truck}>
+            Доставка
           </DiagramBox>
           <Arrow />
           <DiagramBox variant="success" icon={CheckCircle}>
-            Готово
+            Получен
           </DiagramBox>
         </div>
       </div>
 
-      {/* Что видит контрагент */}
-      <div className="bg-secondary/30 border border-border rounded-xl p-5">
-        <h4 className="font-semibold text-foreground mb-3">Что видит контрагент в личном кабинете</h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm text-muted-foreground">
-          <div className="bg-secondary/50 rounded-lg p-3 text-center">
-            📋 Список своих заявок
-          </div>
-          <div className="bg-secondary/50 rounded-lg p-3 text-center">
-            📅 Назначенные даты замера/монтажа
-          </div>
-          <div className="bg-secondary/50 rounded-lg p-3 text-center">
-            📸 Фото и файлы после выполнения
-          </div>
-        </div>
-        <div className="text-xs text-muted-foreground mt-3 text-center italic">
-          Контрагент видит только свои заявки, чужие не видит
-        </div>
-      </div>
-
-      {/* Регионы */}
+      {/* Карточка товара */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-primary/10 border border-primary/30 rounded-xl p-4 text-center">
-          <div className="text-lg font-semibold text-primary mb-2">🏙️ Москва</div>
-          <div className="text-sm text-muted-foreground">
-            Своя команда замерщиков и бригад
-          </div>
+        <div className="bg-secondary/30 border border-border rounded-xl p-5">
+          <h4 className="font-semibold text-foreground mb-3">Карточка товара</h4>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>• Фото 5–8 шт., зум, лайтбокс, 360° спин</li>
+            <li>• 3D-модель и кнопка «Посмотреть в AR»</li>
+            <li>• Атрибуты: порода, размеры, покрытие, вес</li>
+            <li>• Вариации (размер/цвет/покрытие)</li>
+            <li>• Кросселы: «С этим покупают», «Похожие»</li>
+            <li>• Отзывы, рейтинг, Q&A</li>
+          </ul>
         </div>
-        <div className="bg-accent/30 border border-accent/50 rounded-xl p-4 text-center">
-          <div className="text-lg font-semibold text-accent-foreground mb-2">🌉 Санкт-Петербург</div>
-          <div className="text-sm text-muted-foreground">
-            Своя команда замерщиков и бригад
+
+        <div className="bg-secondary/30 border border-border rounded-xl p-5">
+          <h4 className="font-semibold text-foreground mb-3">Корзина и оформление</h4>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li>• Гостевой заказ и через аккаунт</li>
+            <li>• Оплата: YooKassa / CloudPayments</li>
+            <li>• Доставка: СДЭК, Boxberry, ПЭК и др.</li>
+            <li>• Калькулятор стоимости/сроков доставки</li>
+            <li>• Промокоды, купоны, сертификаты (опц.)</li>
+            <li>• Уведомления о статусе (email/SMS)</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Личный кабинет */}
+      <div className="bg-primary/10 border border-primary/30 rounded-xl p-5">
+        <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+          <Star size={18} className="text-primary" />
+          Личный кабинет покупателя
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm text-muted-foreground">
+          <div className="bg-background/50 rounded-lg p-3 text-center">
+            📋 История заказов и повторы
+          </div>
+          <div className="bg-background/50 rounded-lg p-3 text-center">
+            ❤️ Избранное и сохранённые адреса
+          </div>
+          <div className="bg-background/50 rounded-lg p-3 text-center">
+            📦 Отслеживание доставки
           </div>
         </div>
       </div>

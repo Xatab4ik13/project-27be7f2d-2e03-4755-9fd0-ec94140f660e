@@ -1,40 +1,40 @@
 import { 
   Shield, Cloud, Bell, Lock, 
-  Database, Activity, Save
+  Database, Activity, Save, Gauge, Search
 } from "lucide-react";
 import { DiagramSection } from "../diagrams/DiagramSection";
 
 export const TechnicalDiagram = () => {
   const techFeatures = [
     {
-      icon: Lock,
+      icon: Database,
+      title: "Стек",
+      items: ["WordPress 6.7+, WooCommerce 8.6–9.x", "MySQL 8.0+ / MariaDB 10.6+", "PHP 8.3, Nginx 1.20+", "Кастомная блок-тема (Gutenberg)"]
+    },
+    {
+      icon: Shield,
       title: "Безопасность",
-      items: ["HTTPS", "Ограничение по ролям", "reCAPTCHA", "Логи действий"]
+      items: ["HTTPS, SSL", "reCAPTCHA", "Защита от брутфорса", "Онлайн-чеки (54-ФЗ)"]
     },
     {
       icon: Cloud,
-      title: "Хранение файлов",
-      items: ["Облачное хранилище", "До 20 МБ на файл", "До 20 фото в заявке", "Автосжатие"]
+      title: "Хостинг и CDN",
+      items: ["Selectel / Reg.ru", "CDN Qrator Labs", "OPcache, Redis (опц.)", "Ежедневный бэкап"]
     },
     {
-      icon: Bell,
-      title: "Уведомления",
-      items: ["SMS партнёрам", "WhatsApp оповещения", "Напоминания клиентам", "Статусы заказов"]
+      icon: Gauge,
+      title: "Производительность",
+      items: ["LCP ≤ 2.5s, CLS ≤ 0.1", "PageSpeed Mobile 75+", "Lazy-load, WebP", "Core Web Vitals — зелёная зона"]
+    },
+    {
+      icon: Search,
+      title: "SEO",
+      items: ["ЧПУ, каноникал, sitemap", "Микроразметка (Product, Article)", "JSON-LD, Open Graph", "Контент-план на 3 мес."]
     },
     {
       icon: Activity,
-      title: "Производительность",
-      items: ["Кеширование", "CDN для фото", "Lazy-load", "Оптимизация SQL"]
-    },
-    {
-      icon: Save,
-      title: "Резервирование",
-      items: ["Ежедневный бэкап БД", "Бэкап файлов", "Хранение 30 дней", "Восстановление"]
-    },
-    {
-      icon: Database,
-      title: "Логи системы",
-      items: ["Кто изменил статус", "Кто загрузил фото", "Время действий", "История заявки"]
+      title: "Аналитика",
+      items: ["GA4, Яндекс Метрика, GTM", "E-commerce events", "AR-аналитика кликов", "UTM, сквозная аналитика"]
     }
   ];
 

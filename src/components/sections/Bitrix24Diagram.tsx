@@ -1,94 +1,59 @@
 import { 
-  Globe, ArrowLeftRight, Database, 
-  FileText, Image, Bell, RefreshCw
+  CreditCard, Truck, MessageSquare, BarChart3,
+  Mail, ShoppingBag, Smartphone, Receipt
 } from "lucide-react";
-import { DiagramBox } from "../diagrams/DiagramBox";
 import { DiagramSection } from "../diagrams/DiagramSection";
-import { Arrow } from "../diagrams/Arrow";
 
-export const Bitrix24Diagram = () => {
+export const IntegrationsDiagram = () => {
+  const integrations = [
+    {
+      title: "Оплата",
+      icon: CreditCard,
+      items: ["YooKassa / CloudPayments", "Банковские карты", "Онлайн-чеки (54-ФЗ)", "Промокоды и купоны"]
+    },
+    {
+      title: "Доставка",
+      icon: Truck,
+      items: ["СДЭК, Boxberry, ПЭК", "Деловые Линии, Почта России", "Яндекс Доставка", "Калькулятор стоимости/сроков", "Самовывоз"]
+    },
+    {
+      title: "CRM",
+      icon: BarChart3,
+      items: ["amoCRM / Bitrix24 / HubSpot", "Лиды, сделки, статусы", "Сквозная аналитика (опц.)"]
+    },
+    {
+      title: "Уведомления",
+      icon: Mail,
+      items: ["Email (UniSender)", "SMS (SMSC / Bytehand)", "Telegram-бот", "WhatsApp Business API"]
+    },
+    {
+      title: "Маркетплейсы (опц.)",
+      icon: ShoppingBag,
+      items: ["Выгрузка фидов", "Яндекс.Маркет", "Ozon, Wildberries"]
+    },
+    {
+      title: "Бухгалтерия (опц.)",
+      icon: Receipt,
+      items: ["1С / МойСклад", "Контур Маркет", "Синхронизация остатков"]
+    }
+  ];
+
   return (
-    <div className="space-y-6">
-      {/* Two-way sync header */}
-      <div className="flex items-center justify-center gap-4 flex-wrap">
-        <DiagramBox variant="blue" icon={Globe} className="text-lg">
-          Сайт
-        </DiagramBox>
-        <div className="flex items-center gap-2">
-          <ArrowLeftRight className="text-primary" size={32} />
-          <span className="text-sm text-muted-foreground">Двусторонний обмен</span>
-        </div>
-        <DiagramBox variant="orange" icon={Database} className="text-lg">
-          Битрикс24
-        </DiagramBox>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {/* Site → CRM */}
-        <DiagramSection title="Сайт → CRM">
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <FileText size={14} className="text-primary" />
-              <span className="text-muted-foreground">Создание заявки</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Image size={14} className="text-primary" />
-              <span className="text-muted-foreground">Фото проёмов</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <FileText size={14} className="text-primary" />
-              <span className="text-muted-foreground">Данные клиента</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <RefreshCw size={14} className="text-primary" />
-              <span className="text-muted-foreground">Фото после монтажа</span>
-            </li>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {integrations.map((item, index) => (
+        <DiagramSection key={index} title={item.title}>
+          <div className="flex items-center gap-2 mb-3">
+            <item.icon size={20} className="text-primary" />
+          </div>
+          <ul className="space-y-1">
+            {item.items.map((text, idx) => (
+              <li key={idx} className="text-sm text-muted-foreground">
+                • {text}
+              </li>
+            ))}
           </ul>
         </DiagramSection>
-
-        {/* CRM → Site */}
-        <DiagramSection title="CRM → Сайт (Webhook)">
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <RefreshCw size={14} className="text-primary" />
-              <span className="text-muted-foreground">Обновление статуса</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <FileText size={14} className="text-primary" />
-              <span className="text-muted-foreground">Назначение замерщика</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <FileText size={14} className="text-primary" />
-              <span className="text-muted-foreground">Назначение бригады</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Bell size={14} className="text-primary" />
-              <span className="text-muted-foreground">Комментарии менеджера</span>
-            </li>
-          </ul>
-        </DiagramSection>
-
-        {/* Data in CRM */}
-        <DiagramSection title="Поля в сделке CRM">
-          <ul className="space-y-2 text-sm">
-            <li className="flex items-center gap-2">
-              <span className="text-muted-foreground">• Город (Москва/Питер)</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-muted-foreground">• ID заявки сайта</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-muted-foreground">• Партнёр / Замерщик / Бригада</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-muted-foreground">• Фото замера и монтажа</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-muted-foreground">• Размеры и комментарии</span>
-            </li>
-          </ul>
-        </DiagramSection>
-      </div>
+      ))}
     </div>
   );
 };
