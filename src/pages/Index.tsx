@@ -186,11 +186,11 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div className="bg-secondary/30 rounded-xl p-6 border border-border text-center">
               <div className="text-sm text-muted-foreground mb-2">Без договора</div>
-              <div className="text-4xl font-bold text-primary">60 000 ₽</div>
+              <div className="text-4xl font-bold text-primary">65 000 ₽</div>
             </div>
             <div className="bg-primary/10 rounded-xl p-6 border border-primary/30 text-center">
               <div className="text-sm text-muted-foreground mb-2">С договором</div>
-              <div className="text-4xl font-bold text-primary">70 000 ₽</div>
+              <div className="text-4xl font-bold text-primary">75 000 ₽</div>
             </div>
           </div>
 
