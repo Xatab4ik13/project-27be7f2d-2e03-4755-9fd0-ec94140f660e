@@ -1,34 +1,35 @@
 import { 
-  Home, Wrench, Image, MessageSquare, 
-  Phone, FileText, LogIn, Calculator, Store
+  Home, ShoppingBag, Image, BookOpen, 
+  Phone, FileText, User, ShoppingCart, Truck, Search, Star, CreditCard
 } from "lucide-react";
 import { DiagramSection } from "../diagrams/DiagramSection";
 
 export const SiteStructureDiagram = () => {
   const publicPages = [
-    { icon: Home, title: "Главная", desc: "Презентация компании" },
-    { icon: Wrench, title: "Услуги", desc: "Виды работ и цены" },
-    { icon: Calculator, title: "Калькулятор", desc: "Расчёт стоимости" },
-    { icon: Image, title: "Портфолио", desc: "Галерея работ" },
-    { icon: MessageSquare, title: "Отзывы", desc: "Отзывы клиентов" },
-    { icon: Phone, title: "Контакты", desc: "Адреса, телефоны" },
-    { icon: FileText, title: "Заявка", desc: "Форма для клиентов" },
-    { icon: LogIn, title: "Вход", desc: "Для контрагентов" },
+    { icon: Home, title: "Главная", desc: "Презентация, акции" },
+    { icon: ShoppingBag, title: "Каталог", desc: "Категории, фильтры, AR" },
+    { icon: Image, title: "Галерея", desc: "Фото изделий" },
+    { icon: BookOpen, title: "Блог", desc: "Статьи, уход за деревом" },
+    { icon: FileText, title: "О компании", desc: "История, производство" },
+    { icon: Truck, title: "Доставка и оплата", desc: "Способы, сроки" },
+    { icon: Phone, title: "Контакты", desc: "Адрес, телефон" },
+    { icon: FileText, title: "Политики", desc: "Конфиденциальность, оферта" },
   ];
 
-  const cabinetPages = [
-    { icon: Store, title: "Кабинет контрагента", desc: "Заявки, статусы, файлы" },
-    { icon: Wrench, title: "Кабинет замерщика", desc: "Назначенные замеры" },
-    { icon: Wrench, title: "Кабинет бригады", desc: "Назначенные монтажи" },
+  const shopPages = [
+    { icon: ShoppingBag, title: "Карточка товара", desc: "Фото, 3D/AR, характеристики, отзывы" },
+    { icon: ShoppingCart, title: "Корзина", desc: "Гостевой и авторизованный заказ" },
+    { icon: CreditCard, title: "Оформление заказа", desc: "Оплата, доставка, промокоды" },
+    { icon: User, title: "Личный кабинет", desc: "Заказы, избранное, адреса" },
   ];
 
-  const services = [
-    "Установка межкомнатных дверей",
-    "Установка входных дверей",
-    "Установка порталов и перегородок",
-    "Врезка замков",
-    "Регулировка дверей",
-    "Демонтаж старых дверей"
+  const features = [
+    "До 500 изделий из дерева",
+    "AR-просмотр на мобильных (GLB/USDZ)",
+    "Вариативные товары (размер/цвет/покрытие)",
+    "Живой поиск с подсказками",
+    "Фильтры по атрибутам и цене",
+    "Кросселы и апселлы"
   ];
 
   return (
@@ -48,9 +49,9 @@ export const SiteStructureDiagram = () => {
         </div>
       </DiagramSection>
 
-      <DiagramSection title="Личные кабинеты (на сайте)">
+      <DiagramSection title="Магазин">
         <div className="space-y-2">
-          {cabinetPages.map((page, index) => (
+          {shopPages.map((page, index) => (
             <div 
               key={index}
               className="bg-primary/10 border border-primary/20 rounded-lg p-3"
@@ -65,20 +66,17 @@ export const SiteStructureDiagram = () => {
             </div>
           ))}
         </div>
-        <div className="mt-3 text-xs text-muted-foreground text-center italic">
-          Админ и менеджеры работают в Битрикс24
-        </div>
       </DiagramSection>
 
-      <DiagramSection title="Услуги компании">
+      <DiagramSection title="Ключевые возможности каталога">
         <ul className="space-y-2">
-          {services.map((service, index) => (
+          {features.map((feature, index) => (
             <li 
               key={index}
               className="flex items-center gap-2 bg-secondary/40 rounded-lg px-3 py-2"
             >
-              <Wrench size={14} className="text-primary flex-shrink-0" />
-              <span className="text-sm text-foreground">{service}</span>
+              <Star size={14} className="text-primary flex-shrink-0" />
+              <span className="text-sm text-foreground">{feature}</span>
             </li>
           ))}
         </ul>
