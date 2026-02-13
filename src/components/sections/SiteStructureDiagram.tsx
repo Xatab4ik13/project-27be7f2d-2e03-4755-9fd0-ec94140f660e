@@ -12,7 +12,8 @@ export const SiteStructureDiagram = () => {
     { icon: BookOpen, title: "Блог", desc: "Статьи, уход за деревом" },
     { icon: FileText, title: "О компании", desc: "История, производство" },
     { icon: Truck, title: "Доставка и оплата", desc: "Способы, сроки" },
-    { icon: Phone, title: "Контакты", desc: "Адрес, телефон" },
+    { icon: FileText, title: "Услуги", desc: "Перечень услуг, формы, скачивание" },
+    { icon: Phone, title: "Контакты", desc: "Адрес, телефон, обратная связь" },
     { icon: FileText, title: "Политики", desc: "Конфиденциальность, оферта" },
   ];
 

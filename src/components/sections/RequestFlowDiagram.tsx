@@ -52,6 +52,7 @@ export const OrderFlowDiagram = () => {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>• Фото 5–8 шт., зум, лайтбокс, 360° спин</li>
             <li>• 3D-модель и кнопка «Посмотреть в AR»</li>
+            <li>• Описание товара (текст, характеристики, состав)</li>
             <li>• Атрибуты: порода, размеры, покрытие, вес</li>
             <li>• Вариации (размер/цвет/покрытие)</li>
             <li>• Кросселы: «С этим покупают», «Похожие»</li>
@@ -78,7 +79,7 @@ export const OrderFlowDiagram = () => {
           <Star size={18} className="text-primary" />
           Личный кабинет покупателя
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm text-muted-foreground">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 text-sm text-muted-foreground">
           <div className="bg-background/50 rounded-lg p-3 text-center">
             📋 История заказов и повторы
           </div>
@@ -87,6 +88,9 @@ export const OrderFlowDiagram = () => {
           </div>
           <div className="bg-background/50 rounded-lg p-3 text-center">
             📦 Отслеживание доставки
+          </div>
+          <div className="bg-background/50 rounded-lg p-3 text-center">
+            📄 Формы услуг (заполнение и скачивание)
           </div>
         </div>
       </div>
